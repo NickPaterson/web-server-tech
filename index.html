@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
     <link rel="stylesheet" href="_r/css/core.css">
+    <link rel="stylesheet" href="_r/css/components/carousel.css">
+    <script src="https://kit.fontawesome.com/8468662b6c.js" crossorigin="anonymous"></script>
     <script src="_r/js/core.js" defer></script>
+    <script src="_r/js/carousel.js" defer></script>
     <title>Nick Paterson WST</title>
 </head>
 <body class="dark">
@@ -23,17 +30,86 @@
             </div>
             <div class="nav__main">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html">Home</a></li>
+                    <!-- <li class="nav__item"><a href="index.html">Home</a></li>
                     <li class="nav__item"><a href="about.html">About</a></li>
-                    <li class="nav__item"><a href="contact.html">Contact</a></li>
+                    <li class="nav__item"><a href="contact.html">Contact</a></li> -->
                 </ul>
                 <!-- theme toggle -->
                 <div id="themeToggler" class="theme-toggler "></div>  
             </div>
         </nav>
-        <hero>
+        <h1 class="page-title">Web Server Technogoly</h1>
+        <div class="carousel-container">
+            <!-- Week 1 -->
+            <div class="carousel carousel-item">
+                <h2 class="carousel__week-number">Week 1</h2>
+                <h3 class="carousel__title">AWS Ubuntu LAMP</h3>
+                <p class="carousel__description">
+                    This week we learned how to set up a LAMP server on AWS. We also
+                    learned how to use the command line to navigate through the
+                    server.
+                </p>
+                <a href="/week1.html" class="carousel__btn-readmore">Read More</a>
+                <div class="carousel__cover-image">
+                    <img src="/_r/images/week1/main.png" alt="Week 2" class="carousel__img">
+               </div>
+            </div>
 
-        </hero>
+            <!--  Week 2 -->
+            <div class="carousel carousel-item">
+                <h2 class="carousel__week-number">Week 2</h2>
+                <h3 class="carousel__title">Putty and Curl for HTTP</h3>
+                <p class="carousel__description">
+                    This week we learned how to use Putty to connect to the server
+                    and how to use Curl to send HTTP requests.
+                </p>
+                <a href="/week2.html" class="carousel__btn-readmore">Read More</a>
+                <div class="carousel__cover-image">
+                     <img src="/_r/images/week2/main.png" alt="Week 2" class="carousel__img">
+                </div>
+
+               
+            </div>
+
+            <!--  Week 3 -->
+            <div class="carousel carousel-item">
+                <h2 class="carousel__week-number">Week 3</h2>
+                <h3 class="carousel__title">Apache Directives</h3>
+                <p class="carousel__description">
+                    This week we learned how to use Apache directives to configure
+                    the server.
+                </p>
+                <a href="/week3.html" class="carousel__btn-readmore">Read More</a>
+                <div class="carousel__cover-image">
+                    <img src="/_r/images/week3/main.png" alt="Week 2" class="carousel__img">
+               </div>
+            </div>
+
+             <!--  Week 4 -->
+             <div class="carousel carousel-item">
+                <h2 class="carousel__week-number">Week 4</h2>
+                <h3 class="carousel__title">PHP info</h3>
+                <p class="carousel__description">
+                    This week we learned the basics of PHP and more advanced Apache logs.
+                </p>
+                <a href="/week4.html" class="carousel__btn-readmore">Read More</a>
+                <div class="carousel__cover-image">
+                    <img src="/_r/images/week4/main.png" alt="Week 2" class="carousel__img">
+               </div>
+            </div>
+
+            <!-- Dots -->
+            <div id="dots" class="dot-container"></div>
+
+            <!-- Carousel controls -->
+            <div id="carousel__btn-next" class="carousel__btn-next carousel__control-btn">
+                <i class="fa-duotone fa-circle-caret-right"></i>
+            </div>
+            <div id="carousel__btn-prev" class="carousel__btn-prev carousel__control-btn">
+                <i class="fa-duotone fa-circle-caret-left"></i>
+            </div>
+        </div>
+        
     </header>
 </body>
 </html>

@@ -11,4 +11,60 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
+table {
+    margin: 1em;
+}
+table th {
+    border-bottom: solid 1px #696868;
+    border-right: dashed 1px #696868;
+    padding: .5em 1em;
+}
 
+table td {
+    padding: .5em 1em;
+    border-bottom: dashed 1px #696868;
+    border-right: dashed 1px #696868;
+}
+table td:last-child, table th:last-child {
+    border-right: none;
+}
+
+form {
+    margin: 1em;
+    width: fit-content;
+}
+form label {
+    display: inline-block;
+    min-width: 140px;
+    padding: .5em 0;
+}
+
+select {
+    padding: 1px;
+    margin: 0;
+    width: 207px;
+    height: 37px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+form button {
+    display: block;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    background-color: var(--clr-accent);
+    padding: .5em 1em;
+}
+
+form .wideBtn {
+    width: 352px;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}

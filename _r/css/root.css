@@ -9,14 +9,14 @@
     --fw-bold: 900;
     
     --clr-light: #ffefef;
-    --clr-dark: #222020;
+    --clr-dark: #171B1D;
 
-    --clr-primary: #308C8C;
-    --clr-secondary: #F2A649;
-    --clr-accent: #CCF09F;
+    --clr-primary: #e2eaed;
+    --clr-secondary: #c7d1d4;
+    --clr-accent: #d93830;
     
     --fs-h1: 3rem;
-    --fs-h2: 2 rem;
+    --fs-h2: 2rem;
     --fs-h3: 1.25rem;
     --fs-body: 1.2rem;
 
@@ -26,15 +26,13 @@
 }
 /* change :root if body has class of dark */
 body.dark {
-    --clr-light: #222020;
+    --clr-light: #171B1D;
     --clr-dark: #FFFFF0;
     
-    --clr-primary: #103240;
-    --clr-secondary: #D97F30;
+    --clr-primary: #262D2F;
+    --clr-secondary: #1D2224;
     --clr-accent: #d93830;
 
-    background-image: url("/_r/images/bg-hex-dark.png");
-    background-color: #222020;
 }
 
 @media (min-width: 800px) {

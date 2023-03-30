@@ -1,0 +1,126 @@
+.carousel-container {
+    display: grid;
+    grid-template-areas:"carousel carousel"
+                        "dots dots"
+                        "prev next";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 50px 50px;
+}
+.carousel { grid-area: carousel; }
+.dot-container { grid-area: dots; }
+.carousel__btn-next { grid-area: next; }
+.carousel__btn-prev { grid-area: prev; }
+
+
+.carousel {
+    display: grid;
+    grid-template-areas:"week"
+                        "image"
+                        "title"
+                        "description"
+                        "button";
+    grid-template-rows: 70px 300px 50px min-content 80px;
+    width: 90%;
+    margin: 30px auto -2px;
+    grid-gap: 1em;
+    background: var(--clr-primary);
+    border-radius: .2rem;
+    box-shadow: var(--bs);
+}
+
+
+
+.carousel__week-number { grid-area: week; }
+.carousel__title { grid-area: title; }
+.carousel__description { grid-area: description; }
+.carousel__btn-readmore { grid-area: button; }
+.carousel__cover-image { grid-area: image; }
+
+.carousel__cover-image {
+    background-color: var(--clr-secondary);
+    height: 100%;
+    display: flex;
+}
+.carousel__cover-image img {
+    max-height: 300px;
+    background-size: cover;
+    border-radius: .2rem 0 0 .2rem;
+    padding: 1em;
+    margin: auto;
+}
+.carousel__week-number {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.carousel__btn-readmore {
+    color: var(--clr-dark);
+    text-decoration: none;
+    background-color: var(--clr-accent);
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: .5em;
+    text-shadow: var(--bs);
+    box-shadow: var(--bs);
+    justify-self: end;
+    margin-right: 30px;
+}
+
+.carousel__control-btn i {
+    font-size: 50px;
+    --fa-primary-color: var(--clr-light);
+    --fa-secondary-color: var(--clr-dark);
+}
+.carousel__control-btn {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow: var(--bs);
+    cursor: pointer;
+}
+.carousel__btn-prev {
+    justify-self: end;
+    margin-right: 15px;
+}
+.carousel__btn-next {
+    justify-self: start;
+    margin-left: 15px;
+}
+.dot-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid var(--clr-dark);
+    margin: 0 5px;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: var(--clr-dark);
+}
+
+@media (max-width: 800px) {
+    .carousel__title { padding: 0 1em; }
+    .carousel__description { padding: 0 1em; }
+}
+@media (min-width: 800px) {
+    .carousel {
+    display: grid;
+    grid-template-areas:"image week"
+                        "image title"
+                        "image description"
+                        "image button";
+    grid-template-rows: 80px 50px min-content 80px;
+    }
+    
+}

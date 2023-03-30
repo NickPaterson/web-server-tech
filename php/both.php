@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Form Example</title>
+   </head>
+   <body>
+      <form method="post" action="reflect.php?loc=Paisley&yyy=abc&z=999">
+         <p>Enter your name <input type="text" name="your_name" /></p>
+         <p>Enter your password <input type="password" name="pass" /></p>
+         <p>Enter your message<br />
+            <textarea name="message" rows="3" cols="20">
+            </textarea>
+            <br />
+         </p>
+         <p>Please tick the <em>all</em> the HTML techniques you have used</p>
+         <table>
+            <tr>
+               <td><input type="checkbox" name="html_use_basic" value="yes" />basic</td>
+               <td><br /></td>
+               <td></td>
+               <td><input type="checkbox" name="html_use_links" value="no_problem" />links</td>
+            </tr>
+            <tr>
+               <td><input type="checkbox" name="html_use_lists" value="easy" />lists</td>
+               <td><br /></td>
+               <td></td>
+               <td><input type="checkbox" name="html_use_images" value="ok" />images</td>
+            </tr>
+            <tr>
+               <td><input type="checkbox" name="html_use_maps" value="expert" />image maps</td>
+               <td><br /></td>
+               <td></td>
+               <td><input type="checkbox" name="html_use_tables" value="done_that" />tables</td>
+            </tr>
+            <tr>
+               <td><input type="checkbox" name="html_use_windows" value="of_course" />windows</td>
+               <td><br /></td>
+               <td></td>
+               <td><input type="checkbox" name="html_use_frames" value="daily" />frames</td>
+            </tr>
+            <tr>
+               <td><input type="checkbox" name="html_use_dyn" value="often" />dymamic</td>
+               <td><br /></td>
+               <td></td>
+               <td><input type="checkbox" name="html_use_CSS" value="css" />CSS</td>
+            </tr>
+         </table>
+         <p>Select the personal computer operating system you are <em>most</em> familiar with:<br />
+            <input type="radio" name="op_sys" value="linux"/>Linux<br />
+            <input type="radio" name="op_sys" value="win" />Windows<br />
+            <input type="radio" name="op_sys" value="mac" />Macintosh<br />
+            <input type="radio" name="op_sys" value="none" />none of the above
+         </p>
+         <p>
+            Please indicate the type of PC you currently own: 
+            <select name="pc_owned">
+               <option value="basic">basic</option>
+               <option value="high">top specification</option>
+               <option value="none">none</option>
+            </select>
+         </p>
+         <p>
+            Please select <em>all</em> the items you expect to buy in the next 12 months:<br />
+            <select multiple="multiple" size="6" name="shopping_list[]">
+               <option value="basic">basic PC</option>
+               <option value="high">top specification PC</option>
+               <option value="ram">ram upgrade</option>
+               <option value="hard">hard drive</option>
+               <option value="dvd_rw">DVD Read/Write</option>
+               <option value="lcd">monitor</option>
+               <option value="proc_plus">processor upgrade</option>
+               <option value="scan">scanner</option>
+               <option value="broadband">broadband router</option>
+               <option value="printer">printer</option>
+               <option value="soft">software</option>
+            </select>
+         </p>
+         <p>Something mysterious... <input type="hidden" name="top_secret" value="007" /></p>
+         <input type="submit" name="submit_button" value="Send Data" /> <input type="reset" name="clear_button" value="Clear Form" />
+      </form>
+   </body>
+</html>

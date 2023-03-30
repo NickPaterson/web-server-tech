@@ -10,15 +10,15 @@
     stroke-linecap: round;
     fill-rule: evenodd;
     font-size: 1em;
-    stroke: var(--clr-primary);
+    stroke: var(--clr-accent);
     stroke-width: 1px;
-    fill: var(--clr-primary);
+    fill: var(--clr-accent);
     transform: scale(.65);
 }
 .logo__home-link {
     cursor: pointer;
     display: flex;
-    color: var(--clr-dark);
+    color: var(--clr-accent);
     text-decoration: none;
 }
 
@@ -46,7 +46,7 @@
 }
 .nav__item a {
     text-decoration: none;
-    color: var(--clr-primary);
+    color: var(--clr-dark);
     font-size: 1.25rem;
     font-weight: var(--fw-reg);
     text-shadow: var(--bs);
@@ -64,7 +64,7 @@
     width: 50px;
     border-radius: 1em;
     position: relative;
-    border: 3px solid var(--clr-primary);
+    border: 3px solid var(--clr-dark);
     margin: 0 40px;
 }
 
@@ -77,7 +77,7 @@
     top: -1px;
     border-radius: 50%;
     transition: left 0.3s ease-in-out;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-dark);
 }
 body.dark .theme-toggler:after {
     left: 19px;
@@ -89,17 +89,20 @@ body.dark .theme-toggler:after {
 /* ====== */
 
 .header {
-    background: var(--clr-secondary);
-    background: linear-gradient(156deg, var(--clr-secondary) 35%, var(--clr-accent) 100%);
-    background-repeat: repeat;
-
     width: 100vw;
-    min-height: 400px;
+    min-height: 75px;
     border-radius: 0 0 40px 40px;
-
 }
 
-
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+    color: var(--clr-dark);
+    text-shadow: var(--bs);
+}
 /* ==== */
 /* HERO */
 /* ==== */
