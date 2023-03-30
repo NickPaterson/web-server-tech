@@ -1,0 +1,107 @@
+/* ======== */
+/* NAV LOGO */
+/* ======== */
+
+.logo {
+    display: flex;
+    font-size: 2.75rem;
+  }
+.logo__svg {
+    stroke-linecap: round;
+    fill-rule: evenodd;
+    font-size: 1em;
+    stroke: var(--clr-primary);
+    stroke-width: 1px;
+    fill: var(--clr-primary);
+    transform: scale(.65);
+}
+.logo__home-link {
+    cursor: pointer;
+    display: flex;
+    color: var(--clr-dark);
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ========= */
+/* NAV ITEMS */
+/* ========= */
+
+.nav__main {
+    display: flex;
+    align-items: center;
+}
+.nav__list {
+    display: flex;
+}
+.nav__item {
+    list-style: none;
+    margin-right: 1.5rem;
+}
+.nav__item a {
+    text-decoration: none;
+    color: var(--clr-primary);
+    font-size: 1.25rem;
+    font-weight: var(--fw-reg);
+    text-shadow: var(--bs);
+}
+
+
+/* ============ */
+/* THEME TOGGLE */
+/* ============ */
+
+.theme-toggler {
+    display: block;
+    cursor: pointer;
+    height: 30px;
+    width: 50px;
+    border-radius: 1em;
+    position: relative;
+    border: 3px solid var(--clr-primary);
+    margin: 0 40px;
+}
+
+.theme-toggler:after {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: -1px;
+    top: -1px;
+    border-radius: 50%;
+    transition: left 0.3s ease-in-out;
+    background-color: var(--clr-primary);
+}
+body.dark .theme-toggler:after {
+    left: 19px;
+}
+
+
+/* ====== */
+/* HEADER */
+/* ====== */
+
+.header {
+    background: var(--clr-secondary);
+    background: linear-gradient(156deg, var(--clr-secondary) 35%, var(--clr-accent) 100%);
+    background-repeat: repeat;
+
+    width: 100vw;
+    min-height: 400px;
+    border-radius: 0 0 40px 40px;
+
+}
+
+
+/* ==== */
+/* HERO */
+/* ==== */
+
+

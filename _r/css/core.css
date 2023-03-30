@@ -1,0 +1,14 @@
+@import "resets.css";
+@import "root.css";
+@import "components/header.css";
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-body);
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    transition: background-color 0.3s ease-in-out;
+}
+
+
