@@ -59,6 +59,7 @@
 		})
 		.always(function() {
 			console.log( allURL +" Whatever" );
+
 		});
 	}
 
@@ -87,5 +88,6 @@
 	<tr><td><a href="updatePage.php">updatePage.php</a></td><td><a href="move.php">move.php</a> (drag & drop), <a href="update.php">update.php</a> (edit text), <a href="all.php">all.php</a> (all map markers) </td></tr>
 	<tr><td>Database Connection Details</td><td><a href="dbinfo.php">dbinfo.php</a> (no output unless error message)</td></tr> 
 </table>
+
 </body>
 </html>

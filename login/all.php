@@ -24,9 +24,16 @@ try {
     $stmt = $dbh->prepare("SELECT id,name,address,lat,lng,type from markers"); 
     $stmt->execute();
     $responseData = ["data" => $stmt->fetchAll(PDO::FETCH_ASSOC)];
+    array_walk_recursive($responseData, function(&$v) {
+        //$v = htmlentities($v);
+        $v = strip_tags($v);
+    });
     // print_r($responseData);
     // print_r($stmt);
+    
     echo json_encode( $responseData );
+    
+
 } catch (PDOException $e) {
     $responseData = ["errors" => [["title"=> "RBDMS Error", "details"=>$e->getMessage() ]]];
     echo json_encode( $responseData );

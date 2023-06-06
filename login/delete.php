@@ -17,7 +17,7 @@ try {
     $json_str = file_get_contents('php://input');
     $requestData = json_decode($json_str);
     $token = $requestData->token; 
-    // request data from client cannot be trusted! 
+    //request data from client cannot be trusted! 
     if(!Token::check($token)) { 
         $responseData = ["errors" => [["title"=> "Possible CSRF detected"]]]; 
         // during development distinguish between user/password & CSRF failure 
@@ -27,6 +27,8 @@ try {
         // failed so do not execute SQL or add to HTTP response 
     }
     $id = $requestData->id; // none of this request data from the client can be trusted!
+    if ( !is_int($id) ) throw new Exception("incomplete and or incorrect details");
+    
 } catch (Exception $e) {
     $responseData = ["errors" => [["title"=> "Obtaining JSON Inputs", "details"=>$e->getMessage() ]]];
     echo json_encode( $responseData );

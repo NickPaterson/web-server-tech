@@ -74,6 +74,21 @@ if(!$user->isLoggedIn()) {
 		requestData.latlng = marker.getLatLng();
 		requestData.token = token;
 		console.table(requestData);	
+		if (requestData.name==="" || requestData.address==="") {
+			alert("Name and Address are required");
+			return;
+		}
+		if (requestData.latlng.lat===undefined || requestData.latlng.lng===undefined || 
+			requestData.latlng.lat===null || requestData.latlng.lng===null ||
+			requestData.latlng.lat===0 || requestData.latlng.lng===0 ||
+			isNaN(requestData.latlng.lat) || isNaN(requestData.latlng.lng)) {
+			alert("Please click on the map to set the marker");
+			return;
+		}
+		if (requestData.type!=="bar" && requestData.type!=="restaurant") {
+			alert("Type must be bar or restaurant");
+			return;
+		}
 		$.ajax({url: createURL, 
 			contentType : 'application/vnd.api+json',
 			type : 'POST',	

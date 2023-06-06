@@ -92,10 +92,19 @@
 		requestData.id = id;
         requestData.name = $(`#marker${id} .name`).val();
 		requestData.address = $(`#marker${id} .address`).val();
+		//requestData.address = "padding".padEnd(1000, "Nick");
 		requestData.type = $(`#marker${id} .type`).val();
 		requestData.latlng = markers[id].getLatLng();
 		requestData.token = token;
 		console.table(requestData);	
+		if (requestData.name.length > 80) {
+			alert("Name too long");
+			return;
+		}
+		if (requestData.address.length > 80) {
+			alert("Address too long");
+			return;
+		}
 		$.ajax({url: updateURL, 
 			contentType : 'application/vnd.api+json',
 			type : 'POST',	
@@ -136,6 +145,8 @@
 		requestData.latlng = markers[id].getLatLng();
 		requestData.token = token;
 		console.table(requestData);	
+		if (requestData.latlng.lat === "" || requestData.latlng.lng === "") return;
+		
 		$.ajax({url: moveURL, 
 			contentType : 'application/vnd.api+json',
 			type : 'POST',	

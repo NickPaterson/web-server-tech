@@ -32,6 +32,9 @@ try {
     $lat = floatval($requestData->latlng->lat); // none of this request data from the client can be trusted!
     $lng = floatval($requestData->latlng->lng); // none of this request data from the client can be trusted!
     if (  empty($name) or empty($address) or empty($type) or !is_numeric($lat) or !is_numeric($lng) ) throw new Exception("incomplete and or incorrect details");
+    if ( strlen($name) > 100 or strlen($address) > 100 or strlen($type) > 100 ) throw new Exception("name, address and type must be less than 100 characters");
+    // if type not in list of valid types throw exception
+    if ( !in_array($type, ["bar", "restaurant"]) ) throw new Exception("type must be one of bar or restaurant");
 } catch (Exception $e) {
     $responseData = ["errors" => [["title"=> "Obtaining JSON Inputs", "details"=>$e->getMessage() ]]];
     echo json_encode( $responseData );
@@ -64,3 +67,5 @@ try {
     $responseData = ["errors" => [["title"=> "RDBMS Error", "details"=>$e->getMessage() ]]];
     echo json_encode( $responseData );
 }
+
+

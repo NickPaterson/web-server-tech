@@ -16,21 +16,24 @@ try {
     $requestData = json_decode($json_str);
     $token = $requestData->token; 
     // request data from client cannot be trusted! 
-    if(!Token::check($token)) { 
-        $responseData = ["errors" => [["title"=> "Possible CSRF detected"]]]; 
-        // during development distinguish between user/password & CSRF failure 
-        // when deployed use same error message for login & CSRF failure 
-        echo json_encode( $responseData ); 
-        die(); 
-        // failed so do not execute SQL or add to HTTP response 
-    }
+    // if(!Token::check($token)) { 
+    //     $responseData = ["errors" => [["title"=> "Possible CSRF detected"]]]; 
+    //     // during development distinguish between user/password & CSRF failure 
+    //     // when deployed use same error message for login & CSRF failure 
+    //     echo json_encode( $responseData ); 
+    //     die(); 
+    //     // failed so do not execute SQL or add to HTTP response 
+    // }
     $id = intval($requestData->id); // none of this request data from the client can be trusted!
     $name = $requestData->name; // none of this request data from the client can be trusted!
     $address = $requestData->address; // none of this request datafrom the client can be trusted!
     $type = $requestData->type; // none of this request data from the client can be trusted!
     $lat = floatval($requestData->latlng->lat); // none of this request data from the client can be trusted!
     $lng = floatval($requestData->latlng->lng); // none of this request data from the client can be trusted!
+
+   
     if ( !is_int($id) or empty($name) or empty($address) or empty($type) or !is_numeric($lat) or !is_numeric($lng) ) throw new Exception("incomplete and or incorrect details");
+    if ( strlen($name) > 80 or strlen($address) > 80 ) throw new Exception("name or address too long");
 } catch (Exception $e) {
     $responseData = ["errors" => [["title"=> "Obtaining JSON Inputs", "details"=>$e->getMessage() ]]];
     echo json_encode( $responseData );
